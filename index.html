@@ -21,1454 +21,535 @@
       --radius:20px;
       --shadow:0 16px 45px rgba(16,24,40,.08);
     }
-
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
-
-    html{
-      scroll-behavior:smooth;
-    }
-
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
     body{
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,
-      BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-      color:var(--ink);
-      background:var(--bg);
-      line-height:1.65;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      color:var(--ink);background:var(--bg);line-height:1.65;
     }
-
-    a{
-      text-decoration:none;
-      color:inherit;
-    }
-
-    button{
-      font:inherit;
-    }
-
-    .container{
-      width:min(1140px,92%);
-      margin:auto;
-    }
-
-    section{
-      padding:96px 0;
-      scroll-margin-top:76px;
-    }
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    .container{width:min(1140px,92%);margin:auto}
+    section{padding:96px 0;scroll-margin-top:76px}
 
     /* Header */
-
     header{
-      position:fixed;
-      inset:0 0 auto 0;
-      z-index:1000;
-      background:rgba(255,255,255,.90);
-      backdrop-filter:blur(14px);
+      position:fixed;inset:0 0 auto 0;z-index:1000;
+      background:rgba(255,255,255,.90);backdrop-filter:blur(14px);
       border-bottom:1px solid rgba(228,231,236,.85);
     }
-
-    nav{
-      height:74px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-    }
-
-    .brand{
-      font-size:1.35rem;
-      font-weight:850;
-      letter-spacing:-.5px;
-    }
-
-    .brand span{
-      color:var(--primary);
-    }
-
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:27px;
-      list-style:none;
-    }
-
-    .nav-links a{
-      font-size:.92rem;
-      font-weight:700;
-      color:#475467;
-    }
-
-    .nav-links a:hover{
-      color:var(--primary);
-    }
-
-    .menu{
-      display:none;
-      border:0;
-      background:none;
-      font-size:1.6rem;
-      cursor:pointer;
-    }
+    nav{height:74px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-size:1.35rem;font-weight:850;letter-spacing:-.5px}
+    .brand span{color:var(--primary)}
+    .nav-links{display:flex;align-items:center;gap:27px;list-style:none}
+    .nav-links a{font-size:.92rem;font-weight:700;color:#475467}
+    .nav-links a:hover{color:var(--primary)}
+    .menu{display:none;border:0;background:none;font-size:1.6rem;cursor:pointer}
 
     /* Buttons */
-
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      padding:12px 18px;
-      border-radius:11px;
-      border:1px solid var(--line);
-      font-weight:800;
-      font-size:.92rem;
-      transition:.2s ease;
-      cursor:pointer;
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      padding:12px 18px;border-radius:11px;border:1px solid var(--line);
+      font-weight:800;font-size:.92rem;transition:.2s ease;cursor:pointer
     }
-
-    .btn:hover{
-      transform:translateY(-2px);
-    }
-
-    .btn-primary{
-      background:var(--primary);
-      color:#fff;
-      border-color:var(--primary);
-    }
-
-    .btn-primary:hover{
-      background:var(--primary-dark);
-    }
-
-    .btn-light{
-      background:#fff;
-      color:var(--ink);
-    }
-
-    .btn-dark{
-      background:#182230;
-      color:#fff;
-      border-color:#182230;
-    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .btn-primary:hover{background:var(--primary-dark)}
+    .btn-light{background:#fff;color:var(--ink)}
+    .btn-dark{background:#182230;color:#fff;border-color:#182230}
 
     /* Hero */
-
     #home{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      padding-top:125px;
+      min-height:100vh;display:flex;align-items:center;padding-top:125px;
       background:
-        radial-gradient(
-          circle at 85% 18%,
-          rgba(11,92,255,.13),
-          transparent 29%
-        ),
-        radial-gradient(
-          circle at 12% 78%,
-          rgba(16,185,129,.09),
-          transparent 28%
-        ),
+        radial-gradient(circle at 85% 18%,rgba(11,92,255,.13),transparent 29%),
+        radial-gradient(circle at 12% 78%,rgba(16,185,129,.09),transparent 28%),
         var(--bg);
     }
-
-    .hero{
-      display:grid;
-      grid-template-columns:1.25fr .75fr;
-      gap:70px;
-      align-items:center;
-    }
-
+    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
     .badge{
-      display:inline-flex;
-      padding:7px 13px;
-      border-radius:999px;
-      background:#eaf2ff;
-      color:var(--primary);
-      font-size:.82rem;
-      font-weight:850;
-      margin-bottom:19px;
+      display:inline-flex;padding:7px 13px;border-radius:999px;background:#eaf2ff;
+      color:var(--primary);font-size:.82rem;font-weight:850;margin-bottom:19px
     }
-
-    h1{
-      font-size:clamp(2.7rem,6vw,5rem);
-      line-height:1.02;
-      letter-spacing:-3px;
-      margin-bottom:20px;
-    }
-
-    h1 .blue{
-      color:var(--primary);
-    }
-
-    .hero-text{
-      font-size:1.08rem;
-      color:var(--muted);
-      max-width:700px;
-      margin-bottom:28px;
-    }
-
-    .hero-buttons{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
-
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.02;letter-spacing:-3px;margin-bottom:20px}
+    h1 .blue{color:var(--primary)}
+    .hero-text{font-size:1.08rem;color:var(--muted);max-width:700px;margin-bottom:28px}
+    .hero-buttons{display:flex;flex-wrap:wrap;gap:12px}
     .hero-card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:28px;
-      padding:32px;
-      box-shadow:var(--shadow);
-      text-align:center;
+      background:var(--card);border:1px solid var(--line);border-radius:28px;
+      padding:32px;box-shadow:var(--shadow);text-align:center
     }
-
-    /* PROFILE PHOTO */
-
     .avatar{
-      width:165px;
-      height:165px;
-      border-radius:50%;
-      margin:0 auto 22px;
-      display:block;
-      object-fit:cover;
-      object-position:center top;
+      width:165px;height:165px;border-radius:50%;margin:0 auto 22px;
+      display:block;object-fit:cover;object-position:center top;
       border:5px solid #fff;
-      box-shadow:0 18px 35px rgba(11,92,255,.22);
+      box-shadow:0 18px 35px rgba(11,92,255,.22)
     }
-
-    .hero-card h2{
-      font-size:1.35rem;
-    }
-
-    .hero-card p{
-      color:var(--muted);
-      font-size:.94rem;
-    }
-
-    .mini-stats{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:10px;
-      margin-top:22px;
-    }
-
-    .stat{
-      padding:13px;
-      border:1px solid var(--line);
-      border-radius:13px;
-      background:#fafbfc;
-    }
-
-    .stat strong{
-      display:block;
-      font-size:1.05rem;
-    }
-
-    .stat span{
-      font-size:.76rem;
-      color:var(--muted);
-    }
+    .hero-card h2{font-size:1.35rem}
+    .hero-card p{color:var(--muted);font-size:.94rem}
+    .mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+    .stat{padding:13px;border:1px solid var(--line);border-radius:13px;background:#fafbfc}
+    .stat strong{display:block;font-size:1.05rem}
+    .stat span{font-size:.76rem;color:var(--muted)}
 
     /* Common */
-
-    .section-head{
-      text-align:center;
-      max-width:720px;
-      margin:0 auto 46px;
-    }
-
+    .section-head{text-align:center;max-width:720px;margin:0 auto 46px}
     .section-head .label{
-      color:var(--primary);
-      font-weight:850;
-      text-transform:uppercase;
-      letter-spacing:1.2px;
-      font-size:.78rem;
+      color:var(--primary);font-weight:850;text-transform:uppercase;
+      letter-spacing:1.2px;font-size:.78rem
     }
+    .section-head h2{font-size:2.25rem;letter-spacing:-1.2px;margin:7px 0}
+    .section-head p{color:var(--muted)}
 
-    .section-head h2{
-      font-size:2.25rem;
-      letter-spacing:-1.2px;
-      margin:7px 0;
-    }
-
-    .section-head p{
-      color:var(--muted);
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-    }
-
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
     .card{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:28px;
-      box-shadow:0 9px 30px rgba(16,24,40,.045);
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:28px;box-shadow:0 9px 30px rgba(16,24,40,.045)
     }
-
-    .card h3{
-      font-size:1.18rem;
-      margin-bottom:12px;
-    }
-
-    .card p{
-      color:#667085;
-    }
-
-    .info-list{
-      list-style:none;
-    }
-
-    .info-list li{
-      padding:13px 0;
-      border-bottom:1px solid #eef0f3;
-    }
-
-    .info-list li:last-child{
-      border-bottom:0;
-    }
-
-    .info-list strong{
-      display:block;
-    }
-
-    .info-list span{
-      font-size:.9rem;
-      color:var(--muted);
-    }
+    .card h3{font-size:1.18rem;margin-bottom:12px}
+    .card p{color:#667085}
+    .info-list{list-style:none}
+    .info-list li{padding:13px 0;border-bottom:1px solid #eef0f3}
+    .info-list li:last-child{border-bottom:0}
+    .info-list strong{display:block}
+    .info-list span{font-size:.9rem;color:var(--muted)}
 
     /* Skills */
-
-    .skills-wrap{
-      display:flex;
-      flex-wrap:wrap;
-      gap:11px;
-      justify-content:center;
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skill-group{
+      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
+      border:1px solid #e3eaf4;border-radius:18px;padding:22px;
+      box-shadow:0 8px 24px rgba(16,24,40,.05);
     }
-
+    .skill-group h3{font-size:1rem;margin:0 0 16px;display:flex;align-items:center;gap:9px}
+    .skill-group h3::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--primary);display:inline-block}
+    .skill-list{display:flex;flex-wrap:wrap;gap:9px}
     .skill{
-      background:#fff;
-      border:1px solid #dbe4f3;
-      color:#174ea6;
-      border-radius:11px;
-      padding:10px 14px;
-      font-size:.88rem;
-      font-weight:800;
+      background:#fff;border:1px solid #dbe4f3;color:#174ea6;border-radius:10px;
+      padding:8px 12px;font-size:.82rem;font-weight:800;line-height:1.1
     }
 
     /* Projects */
-
-    .projects{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:22px;
-    }
-
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
     .project{
-      background:#fff;
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:27px;
-      transition:.22s;
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+      padding:27px;transition:.22s
     }
-
-    .project:hover{
-      transform:translateY(-5px);
-      box-shadow:var(--shadow);
-    }
-
-    .project-num{
-      font-size:.76rem;
-      font-weight:900;
-      color:var(--primary);
-      letter-spacing:1px;
-    }
-
+    .project:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .project-num{font-size:.76rem;font-weight:900;color:var(--primary);letter-spacing:1px}
     .project-image{
-      width:100%;
-      height:230px;
-      object-fit:cover;
-      display:block;
-      border-radius:14px;
-      margin-bottom:20px;
-      border:1px solid var(--line);
+      width:100%;height:230px;object-fit:cover;display:block;
+      border-radius:14px;margin-bottom:20px;border:1px solid var(--line);
       background:#eef2f7;
     }
 
-    .project h3{
-      font-size:1.25rem;
-      margin:7px 0;
-    }
-
-    .project p{
-      color:var(--muted);
-      font-size:.95rem;
-      margin-bottom:18px;
-    }
-
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:7px;
-    }
-
-    .tag{
-      background:#f2f4f7;
-      color:#475467;
-      border-radius:7px;
-      padding:6px 9px;
-      font-size:.76rem;
-      font-weight:750;
-    }
+    .project h3{font-size:1.25rem;margin:7px 0}
+    .project p{color:var(--muted);font-size:.95rem;margin-bottom:18px}
+    .tags{display:flex;flex-wrap:wrap;gap:7px}
+    .tag{background:#f2f4f7;color:#475467;border-radius:7px;padding:6px 9px;font-size:.76rem;font-weight:750}
 
     /* Certificate */
-
-    .certificate{
-      max-width:900px;
-      margin:auto;
-    }
-
-    .certificate-card{
-      text-align:center;
-    }
-
+    .certificate{max-width:900px;margin:auto}
+    .certificate-card{text-align:center}
     .cert-icon{
-      width:68px;
-      height:68px;
-      margin:0 auto 15px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      background:#eaf2ff;
-      font-size:2rem;
+      width:68px;height:68px;margin:0 auto 15px;border-radius:18px;
+      display:grid;place-items:center;background:#eaf2ff;font-size:2rem
     }
-
-    .cert-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:11px;
-      margin:25px 0;
-      text-align:left;
-    }
-
-    .cert-item{
-      padding:14px;
-      border-radius:12px;
-      background:#f8fafc;
-      border:1px solid #eef1f5;
-    }
-
-    .cert-item small{
-      display:block;
-      color:#98a2b3;
-      font-weight:750;
-    }
-
-    .cert-item strong{
-      font-size:.92rem;
-    }
-
-    .certificate-note{
-      font-size:.9rem;
-      color:var(--muted);
-      margin-bottom:20px;
-    }
+    .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;margin:25px 0;text-align:left}
+    .cert-item{padding:14px;border-radius:12px;background:#f8fafc;border:1px solid #eef1f5}
+    .cert-item small{display:block;color:#98a2b3;font-weight:750}
+    .cert-item strong{font-size:.92rem}
+    .certificate-note{font-size:.9rem;color:var(--muted);margin-bottom:20px}
 
     /* Contact */
-
     .contact-card{
-      max-width:900px;
-      margin:auto;
-      background:var(--dark);
-      color:#fff;
-      border-radius:28px;
-      padding:48px 35px;
-      text-align:center;
+      max-width:900px;margin:auto;background:var(--dark);color:#fff;border-radius:28px;
+      padding:48px 35px;text-align:center
     }
+    .contact-card p{color:#c7d0df;margin:10px auto 25px;max-width:650px}
+    .contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:11px}
+    .contact-links a{background:#fff;color:#182230;padding:11px 16px;border-radius:10px;font-weight:850}
+    .contact-note{margin-top:18px;color:#98a2b3;font-size:.78rem}
 
-    .contact-card p{
-      color:#c7d0df;
-      margin:10px auto 25px;
-      max-width:650px;
-    }
-
-    .contact-links{
-      display:flex;
-      justify-content:center;
-      flex-wrap:wrap;
-      gap:11px;
-    }
-
-    .contact-links a{
-      background:#fff;
-      color:#182230;
-      padding:11px 16px;
-      border-radius:10px;
-      font-weight:850;
-    }
-
-    .contact-note{
-      margin-top:18px;
-      color:#98a2b3;
-      font-size:.78rem;
-    }
-
-    footer{
-      padding:28px 0;
-      text-align:center;
-      color:#7a8699;
-      font-size:.86rem;
-      border-top:1px solid var(--line);
-    }
+    footer{padding:28px 0;text-align:center;color:#7a8699;font-size:.86rem;border-top:1px solid var(--line)}
 
     /* Responsive */
-
     @media(max-width:820px){
-
-      .menu{
-        display:block;
-      }
-
+      .menu{display:block}
       .nav-links{
-        display:none;
-        position:absolute;
-        top:74px;
-        left:0;
-        right:0;
-        background:#fff;
-        flex-direction:column;
-        align-items:flex-start;
-        padding:20px 4%;
-        border-bottom:1px solid var(--line);
+        display:none;position:absolute;top:74px;left:0;right:0;background:#fff;
+        flex-direction:column;align-items:flex-start;padding:20px 4%;
+        border-bottom:1px solid var(--line)
       }
-
-      .nav-links.open{
-        display:flex;
-      }
-
-      .hero,
-      .grid-2,
-      .projects{
-        grid-template-columns:1fr;
-      }
-
-      .hero{
-        text-align:center;
-      }
-
-      .hero-text{
-        margin-left:auto;
-        margin-right:auto;
-      }
-
-      .hero-buttons{
-        justify-content:center;
-      }
-
-      .hero-card{
-        max-width:430px;
-        margin:auto;
-      }
+      .nav-links.open{display:flex}
+      .hero,.grid-2,.projects,.skills-grid{grid-template-columns:1fr}
+      .hero{text-align:center}
+      .hero-text{margin-left:auto;margin-right:auto}
+      .hero-buttons{justify-content:center}
+      .hero-card{max-width:430px;margin:auto}
     }
-
     @media(max-width:520px){
-
-      section{
-        padding:75px 0;
-      }
-
-      h1{
-        letter-spacing:-1.8px;
-      }
-
-      .section-head h2{
-        font-size:1.9rem;
-      }
-
-      .cert-grid{
-        grid-template-columns:1fr;
-      }
-
-      .contact-card{
-        padding:38px 20px;
-      }
+      section{padding:75px 0}
+      h1{letter-spacing:-1.8px}
+      .section-head h2{font-size:1.9rem}
+      .cert-grid{grid-template-columns:1fr}
+      .contact-card{padding:38px 20px}
     }
   </style>
 </head>
 
 <body>
-
 <header>
   <nav class="container">
-
-    <a class="brand" href="#home">
-      Adithyan<span>.R</span>
-    </a>
-
-    <button
-      class="menu"
-      aria-label="Toggle navigation"
-      onclick="toggleMenu()">
-      ☰
-    </button>
-
+    <a class="brand" href="#home">Adithyan<span>.R</span></a>
+    <button class="menu" aria-label="Toggle navigation" onclick="toggleMenu()">☰</button>
     <ul class="nav-links" id="navLinks">
-
-      <li>
-        <a href="#home">Home</a>
-      </li>
-
-      <li>
-        <a href="#about">About</a>
-      </li>
-
-      <li>
-        <a href="#skills">Skills</a>
-      </li>
-
-      <li>
-        <a href="#projects">Projects</a>
-      </li>
-
-      <li>
-        <a href="#resume">Resume</a>
-      </li>
-
-      <li>
-        <a href="#certificate">Certificates</a>
-      </li>
-
-      <li>
-        <a href="#contact">Contact</a>
-      </li>
-
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#certificate">Certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-
 <main>
-
-  <!-- HOME -->
-
   <section id="home">
-
     <div class="container hero">
-
       <div>
-
-        <span class="badge">
-          Data Analyst • Data Science Fresher
-        </span>
-
-        <h1>
-          Turning
-          <span class="blue">data</span>
-          into meaningful insights.
-        </h1>
-
+        <span class="badge">Data Analyst • Data Science Fresher</span>
+        <h1>Turning <span class="blue">data</span> into meaningful insights.</h1>
         <p class="hero-text">
-          I'm <strong>Adithyan R</strong>, a BCA graduate and Data Science
-          fresher with hands-on skills in Python, SQL, MySQL, Power BI,
-          Pandas, NumPy, Excel and Machine Learning.
+          I'm <strong>Adithyan R</strong>, a BCA graduate and Data Science fresher
+          with hands-on skills in Python, SQL, MySQL, Power BI, Pandas, NumPy,
+          Excel and Machine Learning.
         </p>
-
         <div class="hero-buttons">
-
-          <a
-            class="btn btn-primary"
-            href="#projects">
-            View Projects
-          </a>
-
-          <a
-            class="btn btn-light"
-            href="Adithyan_R_Resume.pdf"
-            target="_blank"
-            rel="noopener">
-            View Resume
-          </a>
-
-          <a
-            class="btn btn-light"
-            href="#contact">
-            Contact Me
-          </a>
-
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-light" href="Adithyan_R_Resume.pdf" target="_blank" rel="noopener">View Resume</a>
+          <a class="btn btn-light" href="#contact">Contact Me</a>
         </div>
-
       </div>
-
-
-      <!-- PROFILE CARD -->
 
       <aside class="hero-card">
-
-        <img
-          class="avatar"
-          src="profile-photo.jpg"
-          alt="Adithyan R - Data Analyst and Data Science Fresher">
-
-        <h2>
-          Adithyan R
-        </h2>
-
-        <p>
-          Data Analyst & Data Science Fresher
-        </p>
-
-        <p>
-          Kasaragod, Kerala
-        </p>
-
+        <img class="avatar" src="profile-photo.jpg" alt="Adithyan R - Data Analyst and Data Science Fresher">
+        <h2>Adithyan R</h2>
+        <p>Data Analyst & Data Science Fresher</p>
+        <p>Kasaragod, Kerala</p>
         <div class="mini-stats">
-
-          <div class="stat">
-            <strong>BCA</strong>
-            <span>Graduate · 2025</span>
-          </div>
-
-          <div class="stat">
-            <strong>Data Science</strong>
-            <span>Certified · 2026</span>
-          </div>
-
+          <div class="stat"><strong>BCA</strong><span>Graduate · 2025</span></div>
+          <div class="stat"><strong>Data Science</strong><span>Certified · 2026</span></div>
         </div>
-
       </aside>
-
     </div>
-
   </section>
 
-
-  <!-- ABOUT -->
-
   <section id="about">
-
     <div class="container">
-
       <div class="section-head">
-
-        <span class="label">
-          About
-        </span>
-
-        <h2>
-          A little about me
-        </h2>
-
-        <p>
-          My education, training and areas of professional interest.
-        </p>
-
+        <span class="label">About</span>
+        <h2>A little about me</h2>
+        <p>My education, training and areas of professional interest.</p>
       </div>
 
-
       <div class="grid-2">
-
         <article class="card">
-
-          <h3>
-            Profile
-          </h3>
-
+          <h3>Profile</h3>
           <p>
-            I am a BCA graduate from Srinivas University, Mangalore,
-            with an interest in data analytics, data science,
-            visualization, databases and machine learning.
-            I enjoy learning technologies and applying them to
-            practical projects.
+            I am a BCA graduate from Srinivas University, Mangalore, with an
+            interest in data analytics, data science, visualization, databases
+            and machine learning. I enjoy learning technologies and applying
+            them to practical projects.
           </p>
-
           <br>
-
           <p>
             I completed a Master Certificate in Data Science at Livewire,
             Kasaragod, covering practical work with Python, data analysis,
             databases and machine learning concepts.
           </p>
-
         </article>
-
 
         <article class="card">
-
-          <h3>
-            Education & Training
-          </h3>
-
+          <h3>Education & Training</h3>
           <ul class="info-list">
-
             <li>
-
-              <strong>
-                Bachelor of Computer Applications (BCA)
-              </strong>
-
-              <span>
-                Srinivas University, Mangalore · 2025 · CGPA 6.48
-              </span>
-
+              <strong>Bachelor of Computer Applications (BCA)</strong>
+              <span>Srinivas University, Mangalore · 2025 · CGPA 6.48</span>
             </li>
-
-
             <li>
-
-              <strong>
-                Master Certificate in Data Science
-              </strong>
-
-              <span>
-                Livewire, Kasaragod ·
-                15-Sep-2025 to 30-Aug-2026
-              </span>
-
+              <strong>Master Certificate in Data Science</strong>
+              <span>Livewire, Kasaragod · 15-Sep-2025 to 30-Aug-2026</span>
             </li>
-
-
             <li>
-
-              <strong>
-                Infosys Springboard Certificate
-              </strong>
-
-              <span>
-                Introduction to Python · 30-Sep-2024
-              </span>
-
+              <strong>Infosys Springboard Certificate</strong>
+              <span>Certificate listed in professional profile</span>
             </li>
-
           </ul>
-
         </article>
-
       </div>
-
     </div>
-
   </section>
-
-
-  <!-- SKILLS -->
 
   <section id="skills">
-
     <div class="container">
-
       <div class="section-head">
-
-        <span class="label">
-          Skills
-        </span>
-
-        <h2>
-          Tools & technologies
-        </h2>
-
-        <p>
-          Core technologies included in my education and training.
-        </p>
-
+        <span class="label">Skills</span>
+        <h2>Tools & technologies</h2>
+        <p>Core technologies included in my education and training.</p>
       </div>
 
-
-      <div class="card">
-
-        <div class="skills-wrap">
-
-          <span class="skill">Python</span>
-          <span class="skill">SQL</span>
-          <span class="skill">MySQL</span>
-          <span class="skill">Power BI</span>
-          <span class="skill">Pandas</span>
-          <span class="skill">NumPy</span>
-          <span class="skill">Excel</span>
-          <span class="skill">Machine Learning</span>
-          <span class="skill">HTML</span>
-          <span class="skill">CSS</span>
-          <span class="skill">Java</span>
-          <span class="skill">C</span>
-          <span class="skill">C++</span>
-          <span class="skill">PHP</span>
-          <span class="skill">Tkinter</span>
-          <span class="skill">Microsoft Office</span>
-
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Data & Analytics</h3>
+          <div class="skill-list">
+            <span class="skill">Python</span><span class="skill">SQL</span><span class="skill">MySQL</span>
+            <span class="skill">Power BI</span><span class="skill">Pandas</span><span class="skill">NumPy</span><span class="skill">Excel</span>
+          </div>
         </div>
 
+        <div class="skill-group">
+          <h3>Machine Learning</h3>
+          <div class="skill-list">
+            <span class="skill">Machine Learning</span><span class="skill">Python</span><span class="skill">Pandas</span><span class="skill">NumPy</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Programming & Web</h3>
+          <div class="skill-list">
+            <span class="skill">Java</span><span class="skill">C</span><span class="skill">C++</span>
+            <span class="skill">PHP</span><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">Tkinter</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Office & Productivity</h3>
+          <div class="skill-list">
+            <span class="skill">Microsoft Office</span><span class="skill">Excel</span>
+          </div>
+        </div>
       </div>
-
     </div>
-
   </section>
 
-
-  <!-- PROJECTS -->
-
   <section id="projects">
-
     <div class="container">
-
       <div class="section-head">
-
-        <span class="label">
-          Projects
-        </span>
-
-        <h2>
-          Selected work
-        </h2>
-
-        <p>
-          Projects and practical work from my academic
-          and Data Science training.
-        </p>
-
+        <span class="label">Projects</span>
+        <h2>Selected work</h2>
+        <p>Projects and practical work from my academic and Data Science training.</p>
       </div>
 
-
       <div class="projects">
-
-
-        <!-- PROJECT 1 -->
-
         <article class="project">
-
-          <img
-            class="project-image"
-            src="employee-salary-prediction.jpg"
-            alt="Employee Salary Prediction machine learning application">
-
-          <div class="project-num">
-            PROJECT 01
-          </div>
-
-          <h3>
-            Employee Salary Prediction
-          </h3>
-
+          <img class="project-image" src="employee-salary-prediction.jpg" alt="Employee Salary Prediction machine learning application">
+          <div class="project-num">PROJECT 01</div>
+          <h3>Employee Salary Prediction</h3>
           <p>
             A machine learning application that predicts employee annual
             salary from employee details such as age, gender, education,
             job title, experience and location.
           </p>
-
           <div class="tags">
-
             <span class="tag">Python</span>
             <span class="tag">Machine Learning</span>
             <span class="tag">Scikit-learn</span>
             <span class="tag">Tkinter</span>
             <span class="tag">Pandas</span>
-
           </div>
-
         </article>
 
-
-        <!-- PROJECT 2 -->
-
         <article class="project">
-
-          <img
-            class="project-image"
-            src="railway-ticket-booking-system.jpg"
-            alt="Railway Ticket Booking System application">
-
-          <div class="project-num">
-            PROJECT 02
-          </div>
-
-          <h3>
-            Railway Ticket Booking System
-          </h3>
-
+          <img class="project-image" src="railway-ticket-booking-system.jpg" alt="Railway Ticket Booking System application">
+          <div class="project-num">PROJECT 02</div>
+          <h3>Railway Ticket Booking System</h3>
           <p>
-            A Python desktop application with a Tkinter interface
-            for viewing trains, booking tickets, viewing bookings
-            and cancelling bookings, with MySQL used for data management.
+            A Python desktop application with a Tkinter interface for viewing
+            trains, booking tickets, viewing bookings and cancelling bookings,
+            with MySQL used for data management.
           </p>
-
           <div class="tags">
-
             <span class="tag">Python</span>
             <span class="tag">Tkinter</span>
             <span class="tag">MySQL</span>
-
           </div>
-
         </article>
 
-
-        <!-- PROJECT 3 -->
-
         <article class="project">
-
-          <img
-            class="project-image"
-            src="flipmart-sales-dashboard.jpg"
-            alt="Flipmart Sales Dashboard created in Power BI">
-
-          <div class="project-num">
-            PROJECT 03
-          </div>
-
-          <h3>
-            Flipmart Sales Dashboard
-          </h3>
-
+          <img class="project-image" src="flipmart-sales-dashboard.jpg" alt="Flipmart Sales Dashboard created in Power BI">
+          <div class="project-num">PROJECT 03</div>
+          <h3>Flipmart Sales Dashboard</h3>
           <p>
             An interactive Power BI dashboard analyzing Flipmart sales,
-            profit, quantity and transactions, with filters and
-            visualizations for shipping mode, customer segment,
-            country and product category.
+            profit, quantity and transactions, with filters and visualizations
+            for shipping mode, customer segment, country and product category.
           </p>
-
           <div class="tags">
-
             <span class="tag">Power BI</span>
             <span class="tag">Excel</span>
             <span class="tag">Power Query</span>
             <span class="tag">DAX</span>
             <span class="tag">Data Visualization</span>
-
           </div>
-
         </article>
 
-
-        <!-- PROJECT 4 -->
-
         <article class="project">
-
-          <img
-            class="project-image"
-            src="company-payroll-management.jpg"
-            alt="Company Payroll Management System MySQL result grid">
-
-          <div class="project-num">
-            PROJECT 04
-          </div>
-
-          <h3>
-            Company Payroll Management System
-          </h3>
-
+          <img class="project-image" src="company-payroll-management.jpg" alt="Company Payroll Management System MySQL result grid">
+          <div class="project-num">PROJECT 04</div>
+          <h3>Company Payroll Management System</h3>
           <p>
-            A MySQL-based payroll management project for storing
-            employee details, roles and basic salary information
-            using a relational database and SQL.
+            A MySQL-based payroll management project for storing employee
+            details, roles and basic salary information using a relational
+            database and SQL.
           </p>
-
           <div class="tags">
-
             <span class="tag">MySQL</span>
             <span class="tag">SQL</span>
             <span class="tag">Database Management</span>
-
           </div>
-
         </article>
-
       </div>
-
     </div>
-
   </section>
-
-
-  <!-- RESUME -->
 
   <section id="resume">
-
     <div class="container">
-
       <div class="section-head">
-
-        <span class="label">
-          Resume
-        </span>
-
-        <h2>
-          My resume
-        </h2>
-
-        <p>
-          View or download my current resume.
-        </p>
-
+        <span class="label">Resume</span>
+        <h2>My resume</h2>
+        <p>View or download my current resume.</p>
       </div>
 
-
-      <div
-        class="card"
-        style="text-align:center;max-width:760px;margin:auto">
-
-        <h3>
-          Adithyan R — Resume
-        </h3>
-
-        <p
-          style="margin:10px 0 22px;color:var(--muted)">
-
-          BCA graduate with Data Science training,
-          project experience and technical skills in
-          Python, SQL, MySQL, Power BI and Machine Learning.
-
+      <div class="card" style="text-align:center;max-width:760px;margin:auto">
+        <h3>Adithyan R — Resume</h3>
+        <p style="margin:10px 0 22px;color:var(--muted)">
+          BCA graduate with Data Science training, project experience and technical skills in Python, SQL, MySQL, Power BI and Machine Learning.
         </p>
-
-        <a
-          class="btn btn-primary"
-          href="Adithyan_R_Resume.pdf"
-          target="_blank"
-          rel="noopener">
-
-          View Resume PDF
-
-        </a>
-
+        <a class="btn btn-primary" href="Adithyan_R_Resume.pdf" target="_blank" rel="noopener">View Resume PDF</a>
       </div>
-
     </div>
-
   </section>
-
-
-  <!-- CERTIFICATIONS -->
 
   <section id="certificate">
-
     <div class="container">
-
       <div class="section-head">
-
-        <span class="label">
-          Certifications
-        </span>
-
-        <h2>
-          My certifications
-        </h2>
-
-        <p>
-          Professional training and course certification.
-        </p>
-
+        <span class="label">Certifications</span>
+        <h2>My certifications</h2>
+        <p>Professional training and course certification.</p>
       </div>
-
 
       <div class="projects">
-
-
-        <!-- LIVEWIRE -->
-
         <article class="card certificate-card">
-
-          <div class="cert-icon">
-            🏆
-          </div>
-
-          <h3>
-            Master Certificate in Data Science
-          </h3>
-
-          <p>
-            <strong>
-              Livewire, Kasaragod
-            </strong>
-          </p>
-
+          <div class="cert-icon">🏆</div>
+          <h3>Master Certificate in Data Science</h3>
+          <p><strong>Livewire, Kasaragod</strong></p>
 
           <div class="cert-grid">
-
             <div class="cert-item">
-
-              <small>
-                Awarded to
-              </small>
-
-              <strong>
-                ADITHYAN R
-              </strong>
-
+              <small>Awarded to</small>
+              <strong>ADITHYAN R</strong>
             </div>
-
-
             <div class="cert-item">
-
-              <small>
-                Course period
-              </small>
-
-              <strong>
-                15-Sep-2025 – 30-Aug-2026
-              </strong>
-
+              <small>Course period</small>
+              <strong>15-Sep-2025 – 30-Aug-2026</strong>
             </div>
-
-
             <div class="cert-item">
-
-              <small>
-                Student ID
-              </small>
-
-              <strong>
-                CO250822Z329607
-              </strong>
-
+              <small>Student ID</small>
+              <strong>CO250822Z329607</strong>
             </div>
-
-
             <div class="cert-item">
-
-              <small>
-                Date of issue
-              </small>
-
-              <strong>
-                25-Sep-2026
-              </strong>
-
+              <small>Date of issue</small>
+              <strong>25-Sep-2026</strong>
             </div>
-
           </div>
 
-
           <p class="certificate-note">
-
-            Certificate of Completion for the Master Certificate
-            in Data Science. The certificate image is included
-            for easy viewing.
-
+            Certificate of Completion for the Master Certificate in Data Science. The certificate image is included for easy viewing.
           </p>
 
-
-          <a
-            class="btn btn-primary"
-            href="livewire-certificate.png"
-            target="_blank"
-            rel="noopener">
-
+          <a class="btn btn-primary" href="livewire-certificate.png" target="_blank" rel="noopener">
             View Livewire Certificate
-
           </a>
-
         </article>
-
-
-        <!-- INFOSYS -->
 
         <article class="card certificate-card">
-
-          <div class="cert-icon">
-            📜
-          </div>
-
-          <h3>
-            Introduction to Python
-          </h3>
-
-          <p>
-            <strong>
-              Infosys Springboard
-            </strong>
-          </p>
-
+          <div class="cert-icon">📜</div>
+          <h3>Introduction to Python</h3>
+          <p><strong>Infosys Springboard</strong></p>
 
           <div class="cert-grid">
-
             <div class="cert-item">
-
-              <small>
-                Certificate holder
-              </small>
-
-              <strong>
-                Adithyan R
-              </strong>
-
+              <small>Certificate holder</small>
+              <strong>Adithyan R</strong>
             </div>
-
-
             <div class="cert-item">
-
-              <small>
-                Course
-              </small>
-
-              <strong>
-                Introduction to Python
-              </strong>
-
+              <small>Course</small>
+              <strong>Introduction to Python</strong>
             </div>
-
-
             <div class="cert-item">
-
-              <small>
-                Completed
-              </small>
-
-              <strong>
-                30-Sep-2024
-              </strong>
-
+              <small>Completed</small>
+              <strong>30-Sep-2024</strong>
             </div>
-
-
             <div class="cert-item">
-
-              <small>
-                Verification
-              </small>
-
-              <strong>
-                QR code on certificate
-              </strong>
-
+              <small>Verification</small>
+              <strong>QR code on certificate</strong>
             </div>
-
           </div>
 
-
           <p class="certificate-note">
-
-            Certificate awarded for successfully completing
-            the Introduction to Python course.
-
+            Certificate awarded for successfully completing the Introduction to Python course.
           </p>
 
-
-          <a
-            class="btn btn-primary"
-            href="infosys-certificate.png"
-            target="_blank"
-            rel="noopener">
-
+          <a class="btn btn-primary" href="infosys-certificate.png" target="_blank" rel="noopener">
             View Infosys Certificate
-
           </a>
-
         </article>
-
       </div>
-
     </div>
-
   </section>
-
-
-  <!-- CONTACT -->
 
   <section id="contact">
-
     <div class="container">
-
       <div class="contact-card">
-
-        <h2>
-          Let's connect
-        </h2>
-
+        <h2>Let's connect</h2>
         <p>
-          I am interested in entry-level opportunities
-          in Data Analytics, Data Science and related roles.
+          I am interested in entry-level opportunities in Data Analytics,
+          Data Science and related roles.
         </p>
 
-
+        <!-- Replace the three placeholder links below with your real details. -->
         <div class="contact-links">
-
-          <a
-            href="mailto:adithyanr7979@gmail.com">
-            Email
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/adithyanr0007"
-            target="_blank"
-            rel="noopener">
-            LinkedIn
-          </a>
-
-          <a
-            href="https://github.com/adithyanr7979-arch"
-            target="_blank"
-            rel="noopener">
-            GitHub
-          </a>
-
+          <a href="mailto:adithyanr7979@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/adithyanr0007" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/adithyanr7979-arch" target="_blank" rel="noopener">GitHub</a>
         </div>
-
 
         <div class="contact-note">
-
-          📧 adithyanr7979@gmail.com
-          &nbsp; · &nbsp;
-          📱 +91 9947531615
-
+          📧 adithyanr7979@gmail.com &nbsp; · &nbsp; 📱 +91 9947531615
         </div>
-
       </div>
-
     </div>
-
   </section>
-
 </main>
 
-
 <footer>
-
-  <div class="container">
-
-    © <span id="year"></span>
-    Adithyan R · Data Analyst & Data Science Fresher
-
-  </div>
-
+  <div class="container">© <span id="year"></span> Adithyan R · Data Analyst & Data Science Fresher</div>
 </footer>
 
-
 <script>
-
   function toggleMenu(){
-
-    document
-      .getElementById("navLinks")
-      .classList
-      .toggle("open");
-
+    document.getElementById("navLinks").classList.toggle("open");
   }
 
-
-  document
-    .querySelectorAll(".nav-links a")
-    .forEach(function(link){
-
-      link.addEventListener("click",function(){
-
-        document
-          .getElementById("navLinks")
-          .classList
-          .remove("open");
-
-      });
-
+  document.querySelectorAll(".nav-links a").forEach(function(link){
+    link.addEventListener("click",function(){
+      document.getElementById("navLinks").classList.remove("open");
     });
+  });
 
-
-  document
-    .getElementById("year")
-    .textContent = new Date().getFullYear();
-
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
