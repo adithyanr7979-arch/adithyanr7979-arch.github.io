@@ -115,18 +115,16 @@
     .info-list span{font-size:.9rem;color:var(--muted)}
 
     /* Skills */
-    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
     .skill-group{
-      background:linear-gradient(180deg,#ffffff 0%,#f8fbff 100%);
-      border:1px solid #e3eaf4;border-radius:18px;padding:22px;
-      box-shadow:0 8px 24px rgba(16,24,40,.05);
+      background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;
+      box-shadow:0 8px 25px rgba(16,24,40,.04)
     }
-    .skill-group h3{font-size:1rem;margin:0 0 16px;display:flex;align-items:center;gap:9px}
-    .skill-group h3::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--primary);display:inline-block}
-    .skill-list{display:flex;flex-wrap:wrap;gap:9px}
+    .skill-group h3{font-size:1.05rem;margin-bottom:16px;color:#101828}
+    .skills-wrap{display:flex;flex-wrap:wrap;gap:9px}
     .skill{
-      background:#fff;border:1px solid #dbe4f3;color:#174ea6;border-radius:10px;
-      padding:8px 12px;font-size:.82rem;font-weight:800;line-height:1.1
+      background:#f4f8ff;border:1px solid #dbe7f8;color:#174ea6;border-radius:9px;
+      padding:9px 12px;font-size:.84rem;font-weight:800
     }
 
     /* Projects */
@@ -182,7 +180,7 @@
         border-bottom:1px solid var(--line)
       }
       .nav-links.open{display:flex}
-      .hero,.grid-2,.projects,.skills-grid{grid-template-columns:1fr}
+      .hero,.grid-2,.projects{grid-template-columns:1fr}
       .hero{text-align:center}
       .hero-text{margin-left:auto;margin-right:auto}
       .hero-buttons{justify-content:center}
@@ -192,6 +190,7 @@
       section{padding:75px 0}
       h1{letter-spacing:-1.8px}
       .section-head h2{font-size:1.9rem}
+      .skills-grid{grid-template-columns:1fr}
       .cert-grid{grid-template-columns:1fr}
       .contact-card{padding:38px 20px}
     }
@@ -302,32 +301,45 @@
 
       <div class="skills-grid">
         <div class="skill-group">
-          <h3>Data & Analytics</h3>
-          <div class="skill-list">
-            <span class="skill">Python</span><span class="skill">SQL</span><span class="skill">MySQL</span>
-            <span class="skill">Power BI</span><span class="skill">Pandas</span><span class="skill">NumPy</span><span class="skill">Excel</span>
+          <h3>Data Analysis</h3>
+          <div class="skills-wrap">
+            <span class="skill">SQL</span>
+            <span class="skill">Microsoft Excel</span>
+            <span class="skill">Python</span>
+            <span class="skill">Pandas</span>
+            <span class="skill">NumPy</span>
+            <span class="skill">Data Cleaning</span>
+            <span class="skill">Exploratory Data Analysis (EDA)</span>
+            <span class="skill">Statistics</span>
           </div>
         </div>
 
         <div class="skill-group">
-          <h3>Machine Learning</h3>
-          <div class="skill-list">
-            <span class="skill">Machine Learning</span><span class="skill">Python</span><span class="skill">Pandas</span><span class="skill">NumPy</span>
+          <h3>Business Intelligence & Visualization</h3>
+          <div class="skills-wrap">
+            <span class="skill">Power BI</span>
+            <span class="skill">DAX</span>
+            <span class="skill">Power Query</span>
+            <span class="skill">Data Visualization</span>
+            <span class="skill">Dashboard Development</span>
           </div>
         </div>
 
         <div class="skill-group">
-          <h3>Programming & Web</h3>
-          <div class="skill-list">
-            <span class="skill">Java</span><span class="skill">C</span><span class="skill">C++</span>
-            <span class="skill">PHP</span><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">Tkinter</span>
+          <h3>Database</h3>
+          <div class="skills-wrap">
+            <span class="skill">MySQL</span>
+            <span class="skill">SQL Querying</span>
+            <span class="skill">Database Management</span>
           </div>
         </div>
 
         <div class="skill-group">
-          <h3>Office & Productivity</h3>
-          <div class="skill-list">
-            <span class="skill">Microsoft Office</span><span class="skill">Excel</span>
+          <h3>Additional Skills</h3>
+          <div class="skills-wrap">
+            <span class="skill">Machine Learning</span>
+            <span class="skill">Git</span>
+            <span class="skill">GitHub</span>
           </div>
         </div>
       </div>
